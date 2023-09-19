@@ -5,10 +5,7 @@ const router = express.Router();
 router.post('/bfhl', async (req, res) => {
   try {
     const {
-      userId,
-      collegeEmailId,
-      collegeRollNumber,
-      data,
+      data
     } = req.body;
 
     const numbers=[]
@@ -25,20 +22,11 @@ router.post('/bfhl', async (req, res) => {
       return current > max ? current : max;
     }, 'A'); 
 
-console.log({
-    status: 'Success',
-    userId,
-    collegeEmailId,
-    collegeRollNumber,
-    numbers,
-    alphabets,
-    highestAlphabet,
-  })
     res.json({
-      status: 'Success',
-      userId,
-      collegeEmailId,
-      collegeRollNumber,
+    is_success: true,
+    user_id: "john_doe_17091999", 
+    email : "john@xyz.com",
+    roll_number:"ABCD123",
       numbers,
       alphabets,
       highestAlphabet,
